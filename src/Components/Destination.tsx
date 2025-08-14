@@ -11,34 +11,37 @@ function Destination() {
 
     return (
         <>
-            <h2 className="fw-lighter mt-5 pt-5" style={{fontFamily: "Barlow Condensed", fontSize: "28px"}}><span style={{color: "gray", fontWeight: "bold"}}>01</span> PICK YOUR DESTINATION</h2>
+            <div>
+                {
+                    destinationsData.map((el, index) => (
+                        <div key={index} className="container text-center">
+                            <div className="row align-items-start">
+                                <div className="col-6">
+                                    <h2>PICK YOUR DESTINATION</h2>
+                                    <img src={`${el.images.png}`} width={400}></img>
+                                </div>
 
-            <div className="col-6 mb-4">
-                <img src={`${destinationsData[planetPicked]?.images.png}`} width={400}></img>
-            </div>
+                                <div className="col-4">
+                                    <h1>{el.name}</h1>
+                                    <p>{el.description}</p>
 
-            <div className="col-4 mb-4">
-                <div className="d-flex gap-3">
-                    {destinationsData.map((el, index) => (
-                        <p className={`${planetPicked === index ? "border-bottom border-2" : ""} text-uppercase`} onClick={() => setPlanetPicked(index)} style={{cursor: "pointer", zIndex: "1", fontFamily: "Barlow Condensed", fontSize: "16px"}}>{el.name}</p>
-                    ))}
-                </div>
+                                    <hr></hr>
 
-                <h1 style={{fontFamily: "Bellefair", fontSize: "96px"}} className="pt-2">{destinationsData[planetPicked]?.name}</h1>
-                <p className="p-description py-3">{destinationsData[planetPicked]?.description}</p>
-
-                <hr className="pb-3"></hr>
-
-                <div className="d-flex justify-content-between">
-                    <div>
-                        <h3 className="h3-info">AVG. DISTANCE</h3>
-                        <p className="p-info">{destinationsData[planetPicked]?.distance}</p>
-                    </div>
-                    <div>
-                        <h3 className="h3-info">EST. TRAVEL TIME</h3>
-                        <p className="p-info">{destinationsData[planetPicked]?.travel}</p>
-                    </div>
-                </div>
+                                    <div className="d-flex justify-content-between">
+                                        <div>
+                                            <h3>AVG. DISTANCE</h3>
+                                            <p>{el.distance}</p>
+                                        </div>
+                                        <div>
+                                            <h3>EST. TRAVEL TIME</h3>
+                                            <p>{el.travel}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </>
     )
