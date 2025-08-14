@@ -1,17 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Destination from './Components/Destination'
+import Navigation from './Components/Navigation'
+import HomePage from './Components/HomePage'
+import CrewMember from './Components/CrewMember'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [navigationElement, setNavigationElement] = useState<1|2|3|4>(1)
 
   return (
     <>
-      <div>
-        
-      </div>
-      
+      <Navigation navigationElement = {navigationElement} setNavigationElement={setNavigationElement}></Navigation>
+      {navigationElement === 1? <HomePage setNavigationElement={setNavigationElement}></HomePage>:<></>}
+      {navigationElement === 2? <Destination></Destination>:<></>}
+      {navigationElement === 3? <CrewMember></CrewMember>:<></>}
     </>
   )
 }

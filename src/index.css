@@ -23,11 +23,6 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -65,4 +60,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.div-home-page {
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
 }
