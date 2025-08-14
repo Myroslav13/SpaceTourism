@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import type { DestinationType } from "../interfaces"
 
 function CrewMember() {
-    const [destinationsData, setDestinationData] = useState<DestinationType[]>([]) 
+    const [crewData, setCrewData] = useState<DestinationType[]>([]) 
 
     useEffect(() => {
-        fetch("./data.json").then(response => response.json()).then(data => setDestinationData(data.destinations))
+        fetch("./data.json").then(response => response.json()).then(data => setCrewData(data.crew))
     }, [])    
 
     return (
