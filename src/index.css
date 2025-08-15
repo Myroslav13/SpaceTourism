@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  overflow: hidden;
 }
 
 h1 {
@@ -62,7 +63,7 @@ button:focus-visible {
   }
 }
 
-.div-home-page, .div-destination-page {
+.div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -76,4 +77,27 @@ button:focus-visible {
 
 .div-destination-page {
   background-image: url("./assets/destination/background-destination-desktop.jpg");
+}
+
+.div-crew-page {
+  background-image: url("./assets/crew/background-crew-desktop.jpg");
+}
+
+.div-technology-page {
+  background-image: url("./assets/technology/background-technology-desktop.jpg");
+}
+
+.p-description {
+  font-size: 18px;
+  font-family: "Barlow";
+}
+
+.p-info {
+  font-family: "Bellefair";
+  font-size: 28px;
+}
+
+.h3-info {
+  font-family: "Barlow"; 
+  font-size: 14px;
 }

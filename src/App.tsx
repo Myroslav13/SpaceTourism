@@ -8,7 +8,7 @@ import Technology from "./Components/Technology"
 
 function App() {
   const [navigationElement, setNavigationElement] = useState<1|2|3|4>(1)
-  const divClassArray = ["div-home-page", "div-destination-page"]
+  const divClassArray = ["div-home-page", "div-destination-page", "div-crew-page", "div-technology-page"]
   const divClassDataArray = ["align-items-end justify-content-between", "align-items-center justify-content-center"]
 
   const [columnCount, setColumnCount] = useState(0)
@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
       const updateCount = () => {
-          const gap = 24
+          const gap = 18
           const columnWidth = 50 + gap
 
           if (!containerRef.current) return;
@@ -49,7 +49,7 @@ function App() {
 
                 <div className="d-flex position-absolute top-0" style={{ zIndex: 0 }}>
                     {Array.from({ length: columnCount }).map((_, i) => {
-                        const marginDivRight = i === columnCount - 1 ? "0px" : "24px"
+                        const marginDivRight = i === columnCount - 1 ? "0px" : "18px"
                         
                         return (
                             <div
@@ -57,7 +57,7 @@ function App() {
                                 style={{
                                     width: "50px",
                                     height: "100vh",
-                                    backgroundColor: "rgba(255, 255, 255, 0.05)",
+                                    backgroundColor: "rgba(255, 255, 255, 0.03)",
                                     marginRight: marginDivRight
                                 }}
                             ></div>

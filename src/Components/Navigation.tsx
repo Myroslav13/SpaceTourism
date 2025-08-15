@@ -12,9 +12,9 @@ function Navigation({navigationElement, setNavigationElement}:Props) {
 
                 <div className="collapse navbar-collapse p-0 m-0" id="navbarNav">
                     <div className="d-flex ms-auto">
-                        <hr className="me-2n" style={{border: "1px solid rgba(255, 255, 255, 0.5)", width: "400px", alignSelf: "center"}}></hr>
+                        <hr className="me-2n d-none d-md-block" style={{border: "1px solid rgba(255, 255, 255, 0.5)", width: "400px", alignSelf: "center"}}></hr>
 
-                        <ul className="navbar-nav gap-3 px-5" style={{backgroundColor: "rgba(255, 255, 255, 0.05)"}}>
+                        <ul className="navbar-nav gap-3 px-5" style={{backgroundColor: "rgba(255, 255, 255, 0.05)", fontFamily: "Barlow Condensed"}}>
                             <li className={`nav-item py-3 ${navigationElement === 1 ? "border-bottom border-3" : ""}`}>
                                 <a className="nav-link text-uppercase text-white" href="#" onClick={()=> setNavigationElement(1)}><b>00</b> Home</a>
                             </li>
