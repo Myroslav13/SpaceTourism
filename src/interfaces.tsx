@@ -11,7 +11,20 @@ export interface Images {
     webp: string,
 }
 
-export interface Props {
-    navigationElement: 1|2|3|4,
-    setNavigationElement: React.Dispatch<React.SetStateAction<1|2|3|4>>,
+export interface MemberType {
+    name: string,
+    images: Images,
+    role: string,
+    bio: string,
+}
+
+export interface ImagesTechnology {
+    portrait: string,
+    landscape: string,
+}
+
+export interface TechnologyType {
+    name: string,
+    images: ImagesTechnology,
+    description: string,
 }

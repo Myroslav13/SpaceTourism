@@ -1,47 +1,43 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import type { DestinationType } from "../interfaces"
 
-function Destination() {
-    const [destinationsData, setDestinationData] = useState<DestinationType[]>([]) 
-    const [planetPicked, setPlanetPicked] = useState(0)
+interface Props {
+    destinationsData: DestinationType[],
+}
 
-    useEffect(() => {
-        fetch("./data.json").then(response => response.json()).then(data => setDestinationData(data.destinations))
-    }, [])    
+function Destination({destinationsData}: Props) {
+    const [planetPicked, setPlanetPicked] = useState(0)
 
     return (
         <>
-            <div>
-                {
-                    destinationsData.map((el, index) => (
-                        <div key={index} className="container text-center">
-                            <div className="row align-items-start">
-                                <div className="col-6">
-                                    <h2>PICK YOUR DESTINATION</h2>
-                                    <img src={`${el.images.png}`} width={400}></img>
-                                </div>
+            <h2 className="fw-lighter text-uppercase position-absolute top-0" style={{fontFamily: "Barlow Condensed", fontSize: "28px"}}><span style={{color: "gray", fontWeight: "bold"}}>01</span> Pick your destination</h2>
 
-                                <div className="col-4">
-                                    <h1>{el.name}</h1>
-                                    <p>{el.description}</p>
+            <div className="col-12 col-md">
+                <img src={`${destinationsData[planetPicked]?.images.png}`} width={430}></img>
+            </div>
 
-                                    <hr></hr>
+            <div className="col-12 col-md pe-5">
+                <div className="d-flex gap-3">
+                    {destinationsData.map((el, index) => (
+                        <p className={`${planetPicked === index ? "border-bottom border-2" : ""} text-uppercase`} onClick={() => setPlanetPicked(index)} style={{cursor: "pointer", zIndex: "1", fontFamily: "Barlow Condensed", fontSize: "16px"}}>{el.name}</p>
+                    ))}
+                </div>
 
-                                    <div className="d-flex justify-content-between">
-                                        <div>
-                                            <h3>AVG. DISTANCE</h3>
-                                            <p>{el.distance}</p>
-                                        </div>
-                                        <div>
-                                            <h3>EST. TRAVEL TIME</h3>
-                                            <p>{el.travel}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
+                <h1 style={{fontFamily: "Bellefair", fontSize: "96px"}} className="pt-2">{destinationsData[planetPicked]?.name}</h1>
+                <p className="p-description py-3">{destinationsData[planetPicked]?.description}</p>
+
+                <hr className="pb-3"></hr>
+
+                <div className="d-flex justify-content-between">
+                    <div>
+                        <h3 className="h3-info">AVG. DISTANCE</h3>
+                        <p className="p-info">{destinationsData[planetPicked]?.distance}</p>
+                    </div>
+                    <div>
+                        <h3 className="h3-info">EST. TRAVEL TIME</h3>
+                        <p className="p-info">{destinationsData[planetPicked]?.travel}</p>
+                    </div>
+                </div>
             </div>
         </>
     )

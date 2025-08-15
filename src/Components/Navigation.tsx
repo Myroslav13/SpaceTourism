@@ -1,8 +1,11 @@
-import type { Props } from "../interfaces"
+interface Props {
+    navigationElement: 1|2|3|4,
+    setNavigationElement: React.Dispatch<React.SetStateAction<1|2|3|4>>,
+}
 
 function Navigation({navigationElement, setNavigationElement}:Props) {
     return(
-        <nav className="navbar navbar-expand-lg w-100 fixed-top mt-4">
+        <nav className="navbar navbar-expand-lg w-100 pt-4 z-2">
             <div className="container-fluid p-0">
                 <img src="./assets/shared/logo.svg" className="ps-5"></img>
 
@@ -12,7 +15,7 @@ function Navigation({navigationElement, setNavigationElement}:Props) {
 
                 <div className="collapse navbar-collapse p-0 m-0" id="navbarNav">
                     <div className="d-flex ms-auto">
-                        <hr className="me-2n d-none d-md-block" style={{border: "1px solid rgba(255, 255, 255, 0.5)", width: "400px", alignSelf: "center"}}></hr>
+                        <hr className="d-none d-md-block" style={{border: "1px solid rgba(255, 255, 255, 0.5)", width: "400px", alignSelf: "center", marginRight: "-20px"}}></hr>
 
                         <ul className="navbar-nav gap-3 px-5" style={{backgroundColor: "rgba(255, 255, 255, 0.05)", fontFamily: "Barlow Condensed"}}>
                             <li className={`nav-item py-3 ${navigationElement === 1 ? "border-bottom border-3" : ""}`}>
