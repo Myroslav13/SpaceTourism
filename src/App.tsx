@@ -28,14 +28,22 @@ function App() {
 
         // Column number calculation
         const updateCount = () => {
-            const gap = 18
-            const columnWidth = 50 + gap
+            // const gap = 18
+            // const columnWidth = 50 + gap
 
-            if (!containerRef.current) return;
+            // if (!containerRef.current) return;
 
-            const containerWidth = containerRef.current.offsetWidth
-            const newCount = Math.floor((containerWidth / columnWidth))
+            // const containerWidth = containerRef.current.offsetWidth
+            // const newCount = Math.floor((containerWidth / columnWidth))
 
+            // setColumnCount(newCount)
+
+            let newCount = 19
+            if (window.innerWidth < 1400) newCount = 17
+            if (window.innerWidth < 1200) newCount = 14
+            if (window.innerWidth < 992) newCount = 11
+            if (window.innerWidth < 768) newCount = 8
+            if (window.innerWidth < 576) newCount = 4
             setColumnCount(newCount)
         }
 
@@ -52,13 +60,11 @@ function App() {
         <>
             <div className={`${divClassArray[navigationElement-1]} position-relative`}>
                 <Navigation navigationElement = {navigationElement} setNavigationElement={setNavigationElement}></Navigation>
-                <div ref={containerRef} className="container text-start text-white d-flex align-items-end" style={{ paddingBottom: "50px"}}>
-                    <div className="row align-items-center justify-content-between position-relative" style={{height: "calc(100vh - 106px)"}}>
-                        {navigationElement === 1? <HomePage setNavigationElement={setNavigationElement}></HomePage>:<></>}
-                        {navigationElement === 2? <Destination destinationsData={destinationsData}></Destination>:<></>}
-                        {navigationElement === 3? <CrewMember crewData={crewData}></CrewMember>:<></>}
-                        {navigationElement === 4? <Technology technologyData={technologyData}></Technology>:<></>}
-                    </div>
+                <div ref={containerRef} className="container text-start text-white d-flex align-items-end">
+                    {navigationElement === 1? <HomePage setNavigationElement={setNavigationElement}></HomePage>:<></>}
+                    {navigationElement === 2? <Destination destinationsData={destinationsData}></Destination>:<></>}
+                    {navigationElement === 3? <CrewMember crewData={crewData}></CrewMember>:<></>}
+                    {navigationElement === 4? <Technology technologyData={technologyData}></Technology>:<></>}
 
                     <div className="d-flex position-absolute top-0 z-0 align-items-center justify-content-between">
                         {Array.from({ length: columnCount }).map((_, i) => {

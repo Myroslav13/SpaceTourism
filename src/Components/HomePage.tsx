@@ -4,27 +4,23 @@ interface Props {
 
 function HomePage({ setNavigationElement }: Props) {
     return (
-        <>
-            <div className="col-4 mt-5">
-                <h1 className="fs-4 fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed"}}>SO, YOU WANT TO TRAVEL TO</h1>
-                <h2 className="fw-lighter" style={{fontSize: "144px", zIndex: "1", fontFamily: "Bellefair"}}>SPACE</h2>
-                <p className="p-description">
+        <div className="row align-items-center justify-content-between position-relative" style={{height: "calc(100vh - 160px)"}}>
+            <div className="col-12 col-lg-4 mt-5">
+                <h1 className="fs-4 text-center text-lg-start fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed"}}>SO, YOU WANT TO TRAVEL TO</h1>
+                <h2 className="fw-lighter text-center text-lg-start" style={{fontSize: "144px", zIndex: "1", fontFamily: "Bellefair"}}>SPACE</h2>
+                <p className="p-description text-center text-lg-start">
                     Let’s face it; if you want to go to space, you might as well genuinely go to
                     outer space and not hover kind of on the edge of it. Well sit back, and relax
                     because we’ll give you a truly out of this world experience!
                 </p>
             </div>
 
-            <div className="col-3 mt-5 d-flex justify-content-center">
-                <button
-                    className="rounded-circle btn btn-light right-0"
-                    style={{ width: "272px", height: "272px", zIndex: "1", fontFamily: "Bellefair", fontSize: "32px"}}
-                    onClick={() => setNavigationElement(2)}
-                >
+            <div className="col-12 col-lg-4 col-xl-3 mt-0 mt-md-5 d-flex justify-content-center">
+                <button className="btn-explore rounded-circle btn-light right-0 mt-3 mt-lg-0" onClick={() => setNavigationElement(2)}>
                     EXPLORE
                 </button>
             </div>
-        </>      
+        </div>      
     );
 }
 

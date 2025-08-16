@@ -1,3 +1,4 @@
+import { useState } from "react"
 import type { MemberType } from "../interfaces"
 
 interface Props {
@@ -5,78 +6,44 @@ interface Props {
 }
 
 function CrewMember({crewData}: Props) {  
+    const [crewMember, setCrewMember] = useState(0)
 
     return (
-         <>
-            <h2 className="fw-lighter text-uppercase position-absolute top-0" style={{fontFamily: "Barlow Condensed", fontSize: "28px"}}><span style={{color: "gray", fontWeight: "bold"}}>02</span> Meet your crew</h2>
+        <div className="row align-items-start justify-content-between position-relative" style={{ height: "calc(100vh - 110px)" }}>
+            <h2 className="h2-chapter-headline fw-lighter text-uppercase position-absolute top-0"><span style={{color: "gray", fontWeight: "bold"}}>02</span> Meet your crew</h2>
 
-            <div id="carouselExample" className="carousel slide">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="row d-flex justify-content-between align-items-center">
-                            <div className="col-7">
-                                <h2 className="text-uppercase fw-lighter" style={{color: "gray", fontFamily: "Bellefair", fontSize: "32px"}}>{crewData[0]?.role}</h2>
-                                <h1 className="pt-2 text-uppercase" style={{fontFamily: "Bellefair", fontSize: "56px"}}>{crewData[0]?.name}</h1>
-                                <p className="p-description py-3">{crewData[0]?.bio}</p>
-                            </div>
-
-                            <div className="col-auto pe-5">
-                                <img src={`${crewData[0]?.images.png}`} width={350} height={480}></img>
-                            </div>
-                        </div>
+            <div className="mt-5">
+                <div className="row d-flex justify-content-between align-items-center">
+                    <div className="col-12 col-lg-5 col-xl-7 text-center text-lg-start">
+                        <h2 className="h2-post text-uppercase fw-lighter">{crewData[crewMember]?.role}</h2>
+                        <h1 className="h1-member-name pt-2 text-uppercase">{crewData[crewMember]?.name}</h1>
+                        <p className="p-description py-3">{crewData[crewMember]?.bio}</p>
                     </div>
 
-                    <div className="carousel-item">
-                        <div className="row d-flex justify-content-between align-items-center">
-                            <div className="col-7">
-                                <h2 className="text-uppercase fw-lighter" style={{color: "gray", fontFamily: "Bellefair", fontSize: "32px"}}>{crewData[1]?.role}</h2>
-                                <h1 className="pt-2 text-uppercase" style={{fontFamily: "Bellefair", fontSize: "56px"}}>{crewData[1]?.name}</h1>
-                                <p className="p-description py-3">{crewData[1]?.bio}</p>
-                            </div>
-
-                            <div className="col-auto pe-5">
-                                <img src={`${crewData[1]?.images.png}`} width={350} height={480}></img>
-                            </div>
-                        </div>
+                    <div className="d-flex d-lg-none gap-3 justify-content-center w-100 ms-2 ps-1 z-3">
+                        <button className={`btn-carousel ${crewMember === 0? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(0)}></button>
+                        <button className={`btn-carousel ${crewMember === 1? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(1)}></button>
+                        <button className={`btn-carousel ${crewMember === 2? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(2)}></button>
+                        <button className={`btn-carousel ${crewMember === 3? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(3)}></button>
                     </div>
 
-                    <div className="carousel-item">
-                        <div className="row d-flex justify-content-between align-items-center">
-                            <div className="col-7">
-                                <h2 className="text-uppercase fw-lighter" style={{color: "gray", fontFamily: "Bellefair", fontSize: "32px"}}>{crewData[2]?.role}</h2>
-                                <h1 className="pt-2 text-uppercase" style={{fontFamily: "Bellefair", fontSize: "56px"}}>{crewData[2]?.name}</h1>
-                                <p className="p-description py-3">{crewData[2]?.bio}</p>
-                            </div>
-
-                            <div className="col-auto pe-5">
-                                <img src={`${crewData[2]?.images.png}`} width={400} height={480}></img>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="carousel-item">
-                        <div className="row d-flex justify-content-between align-items-center">
-                            <div className="col-7">
-                                <h2 className="text-uppercase fw-lighter" style={{color: "gray", fontFamily: "Bellefair", fontSize: "32px"}}>{crewData[3]?.role}</h2>
-                                <h1 className="pt-2 text-uppercase" style={{fontFamily: "Bellefair", fontSize: "56px"}}>{crewData[3]?.name}</h1>
-                                <p className="p-description py-3">{crewData[3]?.bio}</p>
-                            </div>
-
-                            <div className="col-auto pe-5">
-                                <img src={`${crewData[3]?.images.png}`} width={430} height={480}></img>
-                            </div>
-                        </div>
+                    <div className="col-12 col-lg-auto pe-5 d-none d-lg-block justify-content-center">
+                        <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : "img-crew-member-2"}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
                     </div>
                 </div>
 
-                <div className="carousel-indicators gap-3 justify-content-start w-100 ms-2 ps-1">
-                    <button type="button" className="active rounded-circle" style={{width: "10px", height: "10px"}} data-bs-target="#carouselExample" data-bs-slide-to="0"></button>
-                    <button type="button" className="rounded-circle" style={{width: "10px", height: "10px"}} data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
-                    <button type="button" className="rounded-circle" style={{width: "10px", height: "10px"}} data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
-                    <button type="button" className="rounded-circle" style={{width: "10px", height: "10px"}} data-bs-target="#carouselExample" data-bs-slide-to="3"></button>
+                <div className="d-none d-lg-flex gap-3 justify-content-start w-100">
+                    <button className={`btn-carousel ${crewMember === 0? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(0)}></button>
+                    <button className={`btn-carousel ${crewMember === 1? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(1)}></button>
+                    <button className={`btn-carousel ${crewMember === 2? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(2)}></button>
+                    <button className={`btn-carousel ${crewMember === 3? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(3)}></button>
+                </div>
+                
+                <div className="col-12 d-flex d-lg-none justify-content-center position-absolute bottom-0">
+                    <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : "img-crew-member-2"}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

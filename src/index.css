@@ -23,7 +23,6 @@ a:hover {
 }
 
 body {
-  overflow: hidden;
 }
 
 h1 {
@@ -100,4 +99,164 @@ button:focus-visible {
 .h3-info {
   font-family: "Barlow"; 
   font-size: 14px;
+}
+
+.btn-technology-switch {
+  height: 80px;
+  width: 80px;
+  font-family: "Bellefair";
+  font-size: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  z-index: 3;
+}
+
+.btn-technology-switch.active {
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.btn-explore {
+  width: 272px; 
+  height: 272px; 
+  z-index: 1; 
+  font-family: "Bellefair";
+  font-size: 32px;
+}
+
+.img-planet {
+  width: 430px;
+}
+
+.h1-planet {
+  font-family: "Bellefair";
+  font-size: 96px;
+}
+
+.h2-chapter-headline {
+  font-family: "Barlow Condensed";
+  font-size: 28px;
+}
+
+.img-crew-member-1 {
+  width: 350px; 
+  height: 480px;
+}
+
+.img-crew-member-2 {
+  width: 380px; 
+  height: 480px;
+}
+
+.h1-member-name {
+  font-family: "Bellefair";
+  font-size: 56px;
+}
+
+.h2-post {
+  color: gray;
+  font-family: "Bellefair";
+  font-size: 32px;
+}
+
+.btn-carousel {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  z-index: 3;
+}
+
+.btn-carousel.active {
+  background-color: white
+}
+
+@media(min-width: 992px) {
+  
+}
+
+/* Tablets */
+@media(max-width: 992px) {
+  .div-home-page {
+    background-image: url("./assets/home/background-home-tablet.jpg");
+  }
+
+  .div-destination-page {
+    background-image: url("./assets/destination/background-destination-tablet.jpg");
+  }
+
+  .div-crew-page {
+    background-image: url("./assets/crew/background-crew-tablet.jpg");
+  }
+
+  .div-technology-page {
+    background-image: url("./assets/technology/background-technology-tablet.jpg");
+  }
+  
+  .btn-explore {
+    width: 232px; 
+    height: 232px;
+    font-size: 28px;
+  }
+
+  .img-planet {
+    width: 240px;
+  }
+
+  .h1-planet {
+    font-size: 80px;
+  }
+  
+  .p-description {
+    font-size: 16px;
+  }
+
+  .h2-chapter-headline {
+    font-size: 20px;
+  }
+
+  .img-crew-member-1 {
+    width: 200px; 
+    height: 300px;
+  }
+
+  .img-crew-member-2 {
+    width: 230px; 
+    height: 300px;
+  }
+
+  .h1-member-name {
+    font-family: "Bellefair";
+    font-size: 40px;
+  }
+
+  .h2-post {
+    font-size: 24px;
+  }
+  
+  .btn-technology-switch {
+    height: 56px;
+    width: 56px;
+    font-size: 24px;
+  }
+}
+
+@media(max-width: 768px) {
+  .div-home-page {
+    background-image: url("./assets/home/background-home-mobile.jpg");
+  }
+
+  .div-destination-page {
+    background-image: url("./assets/destination/background-destination-mobile.jpg");
+  }
+
+  .div-crew-page {
+    background-image: url("./assets/crew/background-crew-mobile.jpg");
+  }
+
+  .div-technology-page {
+    background-image: url("./assets/technology/background-technology-mobile.jpg");
+  }
 }
