@@ -173,8 +173,25 @@ button:focus-visible {
   background-color: white
 }
 
-@media(min-width: 992px) {
-  
+.h2-space {
+  font-size: 144px;
+  z-index: 1;
+  font-family: "Bellefair";
+}
+
+.h1-technology-name {
+  font-family: "Bellefair";
+  font-size: 56px;
+}
+
+.h2-terminology {
+  color: gray; 
+  font-family: "Bellefair";
+  font-size: 32px;
+}
+
+.div-big-row {
+  height: calc(100vh - 110px);
 }
 
 /* Tablets */
@@ -241,10 +258,26 @@ button:focus-visible {
     width: 56px;
     font-size: 24px;
   }
+
+  .h1-technology-name {
+    font-size: 40px;
+  }
+
+  .h2-terminology {
+    font-size: 24px;
+  }
 }
 
 @media(max-width: 768px) {
-  .div-home-page {
+  body {
+    overflow: hidden;
+  }
+
+  .div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
+    background-attachment: fixed;
+  }
+
+  .div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
     background-image: url("./assets/home/background-home-mobile.jpg");
   }
 
@@ -259,4 +292,59 @@ button:focus-visible {
   .div-technology-page {
     background-image: url("./assets/technology/background-technology-mobile.jpg");
   }
+  
+  .h2-space {
+    font-size: 80px;
+  }
+
+  .h1-planet {
+    font-size: 56px;
+  }
+
+  .p-description {
+    font-size: 15px;
+  }
+
+  .h1-technology-name {
+    font-size: 24px;
+  }
+
+  .h2-terminology {
+    font-size: 18px;
+  }
+
+  .img-planet {
+    width: 150px;
+  }
+
+  .img-crew-member-1 {
+    width: 140px; 
+    height: 200px;
+  }
+
+  .img-crew-member-2 {
+    width: 160px; 
+    height: 200px;
+  }
+
+  .div-background-lines {
+    width: fit-content; 
+    left: 0; 
+    right: 0;
+  }
+
+  .h1-member-name {
+    font-size: 24px;
+  }
+
+  .h2-post {
+    font-size: 18px;
+  }
+
+  /* .div-big-row {
+    height: calc(100vh - 180px);
+  } */
+}
+
+@media (max-width: 568px) {
 }

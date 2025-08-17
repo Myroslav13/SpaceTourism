@@ -7,7 +7,7 @@ function HomePage({ setNavigationElement }: Props) {
         <div className="row align-items-center justify-content-between position-relative" style={{height: "calc(100vh - 160px)"}}>
             <div className="col-12 col-lg-4 mt-5">
                 <h1 className="fs-4 text-center text-lg-start fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed"}}>SO, YOU WANT TO TRAVEL TO</h1>
-                <h2 className="fw-lighter text-center text-lg-start" style={{fontSize: "144px", zIndex: "1", fontFamily: "Bellefair"}}>SPACE</h2>
+                <h2 className="h2-space fw-lighter text-center text-lg-start">SPACE</h2>
                 <p className="p-description text-center text-lg-start">
                     Let’s face it; if you want to go to space, you might as well genuinely go to
                     outer space and not hover kind of on the edge of it. Well sit back, and relax

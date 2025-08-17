@@ -9,13 +9,13 @@ function CrewMember({crewData}: Props) {
     const [crewMember, setCrewMember] = useState(0)
 
     return (
-        <div className="row align-items-start justify-content-between position-relative" style={{ height: "calc(100vh - 110px)" }}>
-            <h2 className="h2-chapter-headline fw-lighter text-uppercase position-absolute top-0"><span style={{color: "gray", fontWeight: "bold"}}>02</span> Meet your crew</h2>
+        <div className="row align-items-start justify-content-between position-relative pt-5 pt-md-0" style={{ height: "calc(100vh - 110px)" }}>
+            <h2 className="h2-chapter-headline fw-lighter text-uppercase position-absolute top-0 text-center text-md-start mt-5 mt-md-0"><span style={{color: "gray", fontWeight: "bold"}}>02</span> Meet your crew</h2>
 
             <div className="mt-5">
                 <div className="row d-flex justify-content-between align-items-center">
                     <div className="col-12 col-lg-5 col-xl-7 text-center text-lg-start">
-                        <h2 className="h2-post text-uppercase fw-lighter">{crewData[crewMember]?.role}</h2>
+                        <h2 className="h2-post text-uppercase fw-lighter mt-3 mt-md-0">{crewData[crewMember]?.role}</h2>
                         <h1 className="h1-member-name pt-2 text-uppercase">{crewData[crewMember]?.name}</h1>
                         <p className="p-description py-3">{crewData[crewMember]?.bio}</p>
                     </div>

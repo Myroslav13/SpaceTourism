@@ -66,15 +66,16 @@ function App() {
                     {navigationElement === 3? <CrewMember crewData={crewData}></CrewMember>:<></>}
                     {navigationElement === 4? <Technology technologyData={technologyData}></Technology>:<></>}
 
-                    <div className="d-flex position-absolute top-0 z-0 align-items-center justify-content-between">
+                    <div className="div-background-lines d-flex position-absolute top-0 z-0 align-items-center mx-auto">
                         {Array.from({ length: columnCount }).map((_, i) => {
                             const marginDivRight = i === columnCount - 1 ? "0px" : "18px"
+                            const columnWidth = window.innerWidth < 576 ? "70px" : "50px"
                             
                             return (
                                 <div
                                     key={i}
                                     style={{
-                                        width: "50px",
+                                        width: columnWidth,
                                         height: "100vh",
                                         backgroundColor: "rgba(255, 255, 255, 0.03)",
                                         marginRight: marginDivRight
