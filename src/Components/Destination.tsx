@@ -9,24 +9,24 @@ function Destination({destinationsData}: Props) {
     const [planetPicked, setPlanetPicked] = useState(0)
 
     return (
-        <div className="row align-items-center justify-content-between position-relative pt-5 pt-md-0" style={{height: "calc(100vh - 160px)"}}>
-            <h2 className="h2-chapter-headline fw-lighter text-uppercase position-static position-lg-absolute top-0 text-center text-md-start"><span style={{color: "gray", fontWeight: "bold"}}>01</span> Pick your destination</h2>
-
-            <div className="col-12 col-md d-flex justify-content-center justify-content-lg-start ps-3 ps-lg-0 m-0 p-0 my-3">
+        <div className="row align-items-start justify-content-between position-relative pt-4 pt-md-0" style={{ height: "calc(100vh - 110px)" }}>
+            <h2 className="h2-chapter-headline fw-lighter text-uppercase position-static position-lg-absolute top-0 text-center text-md-start pt-4"><span style={{color: "gray", fontWeight: "bold"}}>01</span> Pick your destination</h2>
+        
+            <div className="col-12 col-md d-flex justify-content-center justify-content-lg-start ps-0 ps-lg-3 m-0 p-0 my-3">
                 <img src={`${destinationsData[planetPicked]?.images.png}`} className="img-planet" alt={`${destinationsData[planetPicked]?.name}`} title={`${destinationsData[planetPicked]?.name}`}></img>
             </div>
 
             <div className="col-12 col-md px-1 px-md-0 pe-0 pe-lg-5">
                 <div className="d-flex gap-3 justify-content-center justify-content-lg-start mt-3 mt-lg-0">
                     {destinationsData.map((el, index) => (
-                        <p className={`${planetPicked === index ? "border-bottom border-2" : ""} text-uppercase`} onClick={() => setPlanetPicked(index)} style={{cursor: "pointer", zIndex: "1", fontFamily: "Barlow Condensed", fontSize: "16px"}}>{el.name}</p>
+                        <p className={`p-destination ${planetPicked === index ? "border-bottom border-2" : ""} text-uppercase`} onClick={() => setPlanetPicked(index)}>{el.name}</p>
                     ))}
                 </div>
 
                 <h1 className="h1-planet pt-0 pt-lg-2 text-center text-lg-start text-uppercase">{destinationsData[planetPicked]?.name}</h1>
                 <p className="p-description py-1 py-lg-3 text-center text-lg-start">{destinationsData[planetPicked]?.description}</p>
 
-                <hr className="pb-2 pb-lg-3"></hr>
+                <hr className="pb-2 pb-lg-3 mx-auto"></hr>
 
                 <div className="d-block d-sm-flex justify-content-center gap-5 text-center text-lg-start justify-content-lg-between">
                     <div>

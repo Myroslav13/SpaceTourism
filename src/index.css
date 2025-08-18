@@ -66,7 +66,8 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  background-attachment: fixed;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -109,7 +110,7 @@ button:focus-visible {
   padding: 0;
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: 1px solid gray;
   z-index: 3;
 }
 
@@ -119,12 +120,22 @@ button:focus-visible {
   border: 1px solid white;
 }
 
+.btn-technology-switch:hover {
+  border-color: white;
+}
+
 .btn-explore {
   width: 272px; 
   height: 272px; 
   z-index: 1; 
   font-family: "Bellefair";
   font-size: 32px;
+}
+
+.btn-explore:hover {
+  box-shadow: 0 0 0 80px rgba(255, 255, 255, 0.1); 
+  color: gray;
+  border: none;
 }
 
 .img-planet {
@@ -173,6 +184,11 @@ button:focus-visible {
   background-color: white
 }
 
+.btn-carousel:hover {
+  background-color: lightgray;
+  border: 1px solid lightgray;
+}
+
 .h2-space {
   font-size: 144px;
   z-index: 1;
@@ -194,6 +210,22 @@ button:focus-visible {
   height: calc(100vh - 110px);
 }
 
+.modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.p-destination {
+  font-size: 16px;
+  z-index: 1;
+  font-family: "Barlow Condensed";
+  cursor: pointer;
+}
+
+.p-destination:hover {
+  border-bottom: 2px solid lightgray;
+}
+
 /* Tablets */
 @media(max-width: 992px) {
   .div-home-page {
@@ -210,6 +242,7 @@ button:focus-visible {
 
   .div-technology-page {
     background-image: url("./assets/technology/background-technology-tablet.jpg");
+    overflow-x: hidden;
   }
   
   .btn-explore {
@@ -266,13 +299,17 @@ button:focus-visible {
   .h2-terminology {
     font-size: 24px;
   }
+  
+  .btn-explore:hover {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.1);
+  }
+
+  .h2-chapter-headline-padding-left {
+    padding-left: 10%;
+  }
 }
 
 @media(max-width: 768px) {
-  body {
-    overflow: hidden;
-  }
-
   .div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
     background-attachment: fixed;
   }
@@ -287,10 +324,12 @@ button:focus-visible {
 
   .div-crew-page {
     background-image: url("./assets/crew/background-crew-mobile.jpg");
+    overflow: hidden;
   }
 
   .div-technology-page {
     background-image: url("./assets/technology/background-technology-mobile.jpg");
+    overflow: hidden;
   }
   
   .h2-space {
@@ -341,10 +380,29 @@ button:focus-visible {
     font-size: 18px;
   }
 
-  /* .div-big-row {
-    height: calc(100vh - 180px);
-  } */
+  .p-destination {
+    font-size: 14px;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .img-technology {
+    height: 270px;
+  }
+
+  .h2-chapter-headline-padding-left {
+    padding-left: 0px;
+  }
 }
 
 @media (max-width: 568px) {
+  .img-technology {
+    height: 240px;
+  }
+
+  .h2-chapter-headline {
+    font-size: 16px;
+  }
 }
