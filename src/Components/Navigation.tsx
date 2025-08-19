@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface Props {
     navigationElement: 0|1|2|3,
@@ -8,9 +8,16 @@ interface Props {
 function Navigation({navigationElement, setNavigationElement}:Props) {
     const [modalWindowOpen, setModalWindowOpen] = useState(false)
 
+    // Burger-menu closing after reaching 768px-width screen size
+    useEffect(() => {
+        if(window.innerWidth > 768) {
+            setModalWindowOpen(false)
+        }
+    })
+
     return(
         <>
-            <div className={`modal ${modalWindowOpen === true ? "d-flex d-ld-none justify-content-end m-0" : ""}`} tabIndex={-1}>
+            <div className={`modal ${modalWindowOpen === true ? "d-flex d-md-none justify-content-end m-0" : ""}`} tabIndex={-1}>
                 <div className="modal-dialog h-100 m-0" style={{width: "70%", backgroundColor: "rgba(11, 13, 23, 0.15)", backdropFilter: "blur(20px)"}}>
                     <div className="modal-content rounded-0">
                         <div className="modal-header border-0 p-4 pb-0 justify-content-end">

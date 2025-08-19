@@ -8,7 +8,7 @@ function HomePage({ setNavigationElement }: Props) {
             <div className="col-12 col-lg-4 mt-5">
                 <h1 className="fs-4 text-center text-lg-start fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed"}}>SO, YOU WANT TO TRAVEL TO</h1>
                 <h2 className="h2-space fw-lighter text-center text-lg-start text-uppercase">Space</h2>
-                <p className="p-description text-center text-lg-start">
+                <p className="p-description text-center text-lg-start px-2 px-lg-0">
                     Let’s face it; if you want to go to space, you might as well genuinely go to
                     outer space and not hover kind of on the edge of it. Well sit back, and relax
                     because we’ll give you a truly out of this world experience!

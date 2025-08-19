@@ -22,9 +22,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -66,9 +63,8 @@ button:focus-visible {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   min-height: 100vh;
-  width: 100%;
 }
 
 .div-home-page {
@@ -226,6 +222,16 @@ button:focus-visible {
   border-bottom: 2px solid lightgray;
 }
 
+.btn-current-technology-padding-left {
+  padding: 11px;
+}
+
+.h2-chapter-headline-padding-left {
+  max-width: auto;
+  position: absolute; 
+  top: 0;
+}
+
 /* Tablets */
 @media(max-width: 992px) {
   .div-home-page {
@@ -305,21 +311,32 @@ button:focus-visible {
   }
 
   .h2-chapter-headline-padding-left {
-    padding-left: 10%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+    position: static;
+    padding-left: 8px;
+  }
+
+  .btn-current-technology-padding-left {
+    padding: 0px;
   }
 }
 
-@media(max-width: 768px) {
-  .div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
-    background-attachment: fixed;
-  }
+@media (min-width: 768px) and (max-width: 992px) {
+  .h2-chapter-headline-padding-left { max-width: 720px; }
+}
 
-  .div-home-page, .div-destination-page, .div-crew-page, .div-technology-page {
+@media(max-width: 768px) {
+  .div-home-page {
     background-image: url("./assets/home/background-home-mobile.jpg");
+    overflow: hidden;
   }
 
   .div-destination-page {
     background-image: url("./assets/destination/background-destination-mobile.jpg");
+    overflow-x: hidden;
   }
 
   .div-crew-page {
@@ -366,6 +383,8 @@ button:focus-visible {
     height: 200px;
   }
 
+  
+
   .div-background-lines {
     width: fit-content; 
     left: 0; 
@@ -393,7 +412,8 @@ button:focus-visible {
   }
 
   .h2-chapter-headline-padding-left {
-    padding-left: 0px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -404,5 +424,17 @@ button:focus-visible {
 
   .h2-chapter-headline {
     font-size: 16px;
+  }
+}
+
+@media ((max-width: 580px) and (min-height: 670px)) {
+  .div-destination-page {
+    overflow: hidden;
+  }
+}
+
+@media (max-height: 670px) {
+  .div-destination-page .container {
+    min-height: 100vh;
   }
 }
