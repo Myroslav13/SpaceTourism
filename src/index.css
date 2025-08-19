@@ -18,6 +18,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -86,6 +87,7 @@ button:focus-visible {
 .p-description {
   font-size: 18px;
   font-family: "Barlow";
+  color: #D0D6F9;
 }
 
 .p-info {
@@ -148,13 +150,24 @@ button:focus-visible {
   font-size: 28px;
 }
 
+.img-crew-member-1, .img-crew-member-2, .img-crew-member-3 {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+}
+
 .img-crew-member-1 {
   width: 350px; 
   height: 480px;
 }
 
 .img-crew-member-2 {
-  width: 380px; 
+  width: 400px; 
+  height: 480px;
+}
+
+.img-crew-member-3 {
+  width: 420px; 
   height: 480px;
 }
 
@@ -216,6 +229,7 @@ button:focus-visible {
   z-index: 1;
   font-family: "Barlow Condensed";
   cursor: pointer;
+  color: #D0D6F9;
 }
 
 .p-destination:hover {
@@ -230,6 +244,136 @@ button:focus-visible {
   max-width: auto;
   position: absolute; 
   top: 0;
+}
+
+.container {
+  padding-left: 24px !important;
+}
+
+@media (max-width: 568px) {
+  .img-technology {
+    height: 240px;
+  }
+
+  .h2-chapter-headline {
+    font-size: 16px;
+  }
+}
+
+@media ((max-width: 580px) and (min-height: 670px)) {
+  .div-destination-page {
+    overflow: hidden;
+  }
+}
+
+@media (max-height: 670px) {
+  .div-destination-page .container {
+    min-height: 100vh;
+  }
+}
+
+/* Mobile phones */
+@media(max-width: 768px) {
+  .div-home-page {
+    background-image: url("./assets/home/background-home-mobile.jpg");
+    overflow: hidden;
+  }
+
+  .div-destination-page {
+    background-image: url("./assets/destination/background-destination-mobile.jpg");
+    overflow-x: hidden;
+  }
+
+  .div-crew-page {
+    background-image: url("./assets/crew/background-crew-mobile.jpg");
+    overflow: hidden;
+  }
+
+  .div-technology-page {
+    background-image: url("./assets/technology/background-technology-mobile.jpg");
+    overflow-x: hidden;
+  }
+  
+  .h2-space {
+    font-size: 80px;
+  }
+
+  .h1-planet {
+    font-size: 56px;
+  }
+
+  .p-description {
+    font-size: 15px;
+  }
+
+  .h1-technology-name {
+    font-size: 24px;
+  }
+
+  .h2-terminology {
+    font-size: 18px;
+  }
+
+  .img-planet {
+    width: 150px;
+  }
+
+  .img-crew-member-1 {
+    width: 160px; 
+    height: 220px;
+  }
+
+  .img-crew-member-2, .img-crew-member-3 {
+    width: 180px; 
+    height: 220px;
+  }
+
+  /*.img-crew-member-1 {
+    width: 200px; 
+    height: 300px;
+  }
+
+  .img-crew-member-2, .img-crew-member-3 {
+    width: 250px; 
+    height: 300px;
+  }*/
+
+  .div-background-lines {
+    width: fit-content; 
+    left: 0; 
+    right: 0;
+  }
+
+  .h1-member-name {
+    font-size: 24px;
+  }
+
+  .h2-post {
+    font-size: 18px;
+  }
+
+  .p-destination {
+    font-size: 14px;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  .img-technology {
+    height: 270px;
+  }
+
+  .h2-chapter-headline-padding-left {
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-crew-member-1, .img-crew-member-2, .img-crew-member-3 {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+  }
 }
 
 /* Tablets */
@@ -271,6 +415,7 @@ button:focus-visible {
 
   .h2-chapter-headline {
     font-size: 20px;
+    padding-left: 0px;
   }
 
   .img-crew-member-1 {
@@ -279,7 +424,12 @@ button:focus-visible {
   }
 
   .img-crew-member-2 {
-    width: 230px; 
+    width: 250px; 
+    height: 300px;
+  }
+
+  .img-crew-member-3 {
+    width: 270px; 
     height: 300px;
   }
 
@@ -322,119 +472,30 @@ button:focus-visible {
   .btn-current-technology-padding-left {
     padding: 0px;
   }
+
+  .container {
+    padding-left: 0px !important;
+  }
+
+  .img-crew-member-1, .img-crew-member-2, .img-crew-member-3 {
+    -webkit-mask-image: none;
+    -webkit-mask-repeat: initial;
+    -webkit-mask-size: initial;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .h2-chapter-headline-padding-left { max-width: 720px; }
 }
 
-@media(max-width: 768px) {
-  .div-home-page {
-    background-image: url("./assets/home/background-home-mobile.jpg");
-    overflow: hidden;
-  }
-
-  .div-destination-page {
-    background-image: url("./assets/destination/background-destination-mobile.jpg");
-    overflow-x: hidden;
-  }
-
-  .div-crew-page {
-    background-image: url("./assets/crew/background-crew-mobile.jpg");
-    overflow: hidden;
-  }
-
-  .div-technology-page {
-    background-image: url("./assets/technology/background-technology-mobile.jpg");
-    overflow: hidden;
-  }
-  
-  .h2-space {
-    font-size: 80px;
-  }
-
-  .h1-planet {
-    font-size: 56px;
-  }
-
-  .p-description {
-    font-size: 15px;
-  }
-
-  .h1-technology-name {
-    font-size: 24px;
-  }
-
-  .h2-terminology {
-    font-size: 18px;
-  }
-
-  .img-planet {
-    width: 150px;
-  }
-
-  .img-crew-member-1 {
-    width: 140px; 
-    height: 200px;
-  }
-
-  .img-crew-member-2 {
-    width: 160px; 
-    height: 200px;
-  }
-
-  
-
-  .div-background-lines {
-    width: fit-content; 
-    left: 0; 
-    right: 0;
-  }
-
-  .h1-member-name {
-    font-size: 24px;
-  }
-
-  .h2-post {
-    font-size: 18px;
-  }
-
-  .p-destination {
-    font-size: 14px;
-  }
-
-  hr {
-    width: 90%;
-  }
-
-  .img-technology {
-    height: 270px;
-  }
-
-  .h2-chapter-headline-padding-left {
-    display: flex;
-    justify-content: center;
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 12px !important;
   }
 }
-
-@media (max-width: 568px) {
-  .img-technology {
-    height: 240px;
-  }
-
-  .h2-chapter-headline {
-    font-size: 16px;
-  }
-}
-
-@media ((max-width: 580px) and (min-height: 670px)) {
-  .div-destination-page {
-    overflow: hidden;
-  }
-}
-
-@media (max-height: 670px) {
-  .div-destination-page .container {
-    min-height: 100vh;
+ 
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container {
+    padding-left: 0px !important;
   }
 }

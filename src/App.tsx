@@ -28,23 +28,15 @@ function App() {
 
         // Column number calculation
         const updateCount = () => {
-            // const gap = 18
-            // const columnWidth = 50 + gap
+            let newColumnCount = 19
 
-            // if (!containerRef.current) return;
-
-            // const containerWidth = containerRef.current.offsetWidth
-            // const newCount = Math.floor((containerWidth / columnWidth))
-
-            // setColumnCount(newCount)
-
-            let newCount = 19
-            if (window.innerWidth < 1400) newCount = 17
-            if (window.innerWidth < 1200) newCount = 14
-            if (window.innerWidth < 992) newCount = 11
-            if (window.innerWidth < 768) newCount = 8
-            if (window.innerWidth < 576) newCount = 4
-            setColumnCount(newCount)
+            if (window.innerWidth < 1400) newColumnCount = 17
+            if (window.innerWidth < 1200) newColumnCount = 14
+            if (window.innerWidth < 992) newColumnCount = 11
+            if (window.innerWidth < 768) newColumnCount = 8
+            if (window.innerWidth < 576) newColumnCount = 4
+    
+            setColumnCount(newColumnCount)
         }
 
         updateCount()
@@ -60,7 +52,7 @@ function App() {
         <>
             <div className={`${divClassArray[navigationElement]} position-relative`}>
                 <Navigation navigationElement={navigationElement} setNavigationElement={setNavigationElement}></Navigation>
-                <div ref={containerRef} className={`${(navigationElement === 3 && window.innerWidth < 992) ? "": "container"} text-start text-white px-0 px-lg-3 px-xl-4`}>
+                <div ref={containerRef} className={`${(navigationElement === 3 && window.innerWidth < 992) ? "": "container"} text-start text-white`}>
                     {navigationElement === 0 ? <HomePage setNavigationElement={setNavigationElement}></HomePage> : <></>}
                     {navigationElement === 1 ? <Destination destinationsData={destinationsData}></Destination> : <></>}
                     {navigationElement === 2 ? <CrewMember crewData={crewData}></CrewMember> : <></>}

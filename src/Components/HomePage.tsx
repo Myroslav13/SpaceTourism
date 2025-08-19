@@ -6,7 +6,7 @@ function HomePage({ setNavigationElement }: Props) {
     return (
         <div className="row align-items-center justify-content-between position-relative" style={{height: "calc(100vh - 160px)"}}>
             <div className="col-12 col-lg-4 mt-5">
-                <h1 className="fs-4 text-center text-lg-start fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed"}}>SO, YOU WANT TO TRAVEL TO</h1>
+                <h1 className="fs-4 text-center text-lg-start fw-lighter m-0" style={{zIndex: "1", fontFamily: "Barlow Condensed", color: "#D0D6F9"}}>SO, YOU WANT TO TRAVEL TO</h1>
                 <h2 className="h2-space fw-lighter text-center text-lg-start text-uppercase">Space</h2>
                 <p className="p-description text-center text-lg-start px-2 px-lg-0">
                     Let’s face it; if you want to go to space, you might as well genuinely go to

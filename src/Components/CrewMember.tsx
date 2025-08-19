@@ -27,8 +27,8 @@ function CrewMember({crewData}: Props) {
                         <button className={`btn-carousel ${crewMember === 3? "active" : ""} rounded-circle p-0`} onClick={() => setCrewMember(3)}></button>
                     </div>
 
-                    <div className="col-12 col-lg-auto pe-5 d-none d-lg-block justify-content-center img-crew-member-container">
-                        <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : "img-crew-member-2"}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
+                    <div className="col-12 col-lg-auto pe-0 pe-lg-3 pe-xl-4 d-none d-lg-block justify-content-center img-crew-member-container">
+                        <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : `img-crew-member-${crewMember}`}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@ function CrewMember({crewData}: Props) {
                 </div>
                 
                 <div className="col-12 d-flex d-lg-none justify-content-center position-absolute bottom-0">
-                    <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : "img-crew-member-2"}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
+                    <img src={`${crewData[crewMember]?.images.png}`} className={`${crewMember < 2? "img-crew-member-1" : `img-crew-member-${crewMember}`}`} alt={`${crewData[0].name}`} title={`${crewData[0].name}`}></img>
                 </div>
             </div>
         </div>

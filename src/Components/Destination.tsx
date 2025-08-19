@@ -16,7 +16,7 @@ function Destination({destinationsData}: Props) {
                 <img src={`${destinationsData[planetPicked]?.images.png}`} className="img-planet" alt={`${destinationsData[planetPicked]?.name}`} title={`${destinationsData[planetPicked]?.name}`}></img>
             </div>
 
-            <div className="col-12 col-md px-1 px-md-0 pe-0 pe-lg-5">
+            <div className="col-12 col-md px-1 px-md-0 pe-0 pe-lg-3 pe-xl-4">
                 <div className="d-flex gap-3 justify-content-center justify-content-lg-start mt-3 mt-lg-0">
                     {destinationsData.map((el, index) => (
                         <p className={`p-destination ${planetPicked === index ? "border-bottom border-2" : ""} text-uppercase`} onClick={() => setPlanetPicked(index)}>{el.name}</p>
